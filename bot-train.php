@@ -53,7 +53,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
 				$a=1;
 				while($obj = mysqli_fetch_array($query_area))
 				{
-					$txtsend = $txtsend ."\n\n".$a.". งานของ กฟฟ. : ".$obj["pea"]."\n".$obj["detail"]."\n".$obj["wbs"];
+					$txtsend = $txtsend ."\n\n".$a.") ชื่อ กฟฟ. --> ".$obj["pea"]."\n ชื่องาน : ".$obj["detail"]."\n".$obj["wbs"];
 					$a = $a+1;
 				}
 				reply_msg($txtsend,$replyToken);//เรียกใช้ function
