@@ -37,8 +37,8 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $first_char = substr($txtin,0,1);//ตัดเอาเฉพาะตัวอักษรตัวแรก
 			if($first_char == "@")
 			{
-				$kinput = trim(substr($txtin,1,4));///ได้ข้อความ
-				$sql_keyw = "SELECT * FROM tbl_improve WHERE wbs = '%".$kinput."%'";
+				$key_id = trim(substr($txtin,1,4));///ได้ข้อความ
+				$sql_keyw = "SELECT * FROM tbl_improve WHERE wbs = '%".$key_id."%'";
 				$query_keyw = mysqli_query($conn,$sql_keyw);
 				$num_row = mysqli_num_r($query_keyw); // นับจำนวนที่หาเจอ
 				$txtsend = "ค้นพบ ".$num_row." รายการ";
@@ -49,7 +49,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
 					$a = $a+1;
 				}
 				//reply_msg($txtsend,$replyToken);//เรียกใช้ function
-				reply_msg($kinput,$replyToken);
+				reply_msg($key_id,$replyToken);
 				break;
 			}
          /*ลงทะเบียนกลุ่ม*/   
