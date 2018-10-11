@@ -43,7 +43,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
 				$num_row = mysqli_num_rows($query_keyw);// นับจำนวนที่หาเจอ
 				$txtsend = "ค้นพบ ".$num_row." รายการ";
 				$a=1;
-				while($obj = mysqli_fetch_array($query_area))
+				while($obj = mysqli_fetch_array($query_keyw))
 				{
 					$txtsend = $txtsend ."\n\n".$a.".".$obj["oper"]."\n".$obj["wbs"]."\n".$obj["name"];
 					$a = $a+1;
