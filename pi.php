@@ -35,10 +35,10 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $source_type = $event['source']['type'];//เก็บที่มาของ event(user หรือ group)
             $txtin = $event['message']['text'];//เอาข้อความจากไลน์ใส่ตัวแปร $txtin
             $first_char = substr($txtin,0,1);//ตัดเอาเฉพาะตัวอักษรตัวแรก
-			if($first_char == "@")
+			if($first_char == "$")
 			{
 				$keyword = substr($txtin,1,4);///ได้ข้อความ
-				$sql_keyw = "SELECT * FROM tbl_PI WHERE Details = '%".$keyword."%'";
+				$sql_keyw = "SELECT * FROM tbl_improve WHERE Details = '%".$keyword."%'";
 				$query_keyw = mysqli_query($conn,$sql_keyw);
 				$num_row = mysqli_num_rows($query_keyw);// นับจำนวนที่หาเจอ
 				$txtsend = "ค้นพบ ".$num_row." รายการ";
