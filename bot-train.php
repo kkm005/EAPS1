@@ -45,7 +45,8 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
 			if($first_char == "@")
 			{
 				$office_id = trim(substr($txtin,1,strlen($txtin)));///ได้รหัสการไฟฟ้า 
-				$sql_area = "SELECT * FROM tbl_improve WHERE detail LIKE '%"หนอง"%'";
+				reply_msg($office_id,$replyToken);
+				$sql_area = "SELECT * FROM tbl_improve WHERE detail LIKE '%"$office_id"%'";
 				$query_area = mysqli_query($conn,$sql_area);
 				$num_row = mysqli_num_rows($query_area);// นับจำนวนที่หาเจอ
 				$txtsend = "ค้นพบ ".$num_row." รายการ";
