@@ -37,10 +37,10 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $first_char = substr($txtin,0,1);//ตัดเอาเฉพาะตัวอักษรตัวแรก
 			if($first_char == "@")
 			{
-				$office_id = substr($txtin,1,2);///ได้รหัสการไฟฟ้า 
-				$sql_area = "SELECT * FROM tbl_tdd WHERE area = '%".$office_id."%'";
-				$query_area = mysqli_query($conn,$sql_area);
-				$num_row = mysqli_num_rows($query_area);// นับจำนวนที่หาเจอ
+				$keyword = substr($txtin,1,4);///ได้ข้อความ
+				$sql_keyw = "SELECT * FROM tbl_PI WHERE Details = '%".$keyword."%'";
+				$query_keyw = mysqli_query($conn,$sql_keyw);
+				$num_row = mysqli_num_rows($query_keyw);// นับจำนวนที่หาเจอ
 				$txtsend = "ค้นพบ ".$num_row." รายการ";
 				$a=1;
 				while($obj = mysqli_fetch_array($query_area))
