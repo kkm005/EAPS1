@@ -1,5 +1,17 @@
 <?php
-require('./db/connect-db.php');//เรียกใช้ file connect-db
+//require('./db/connect-db.php');//เรียกใช้ file connect-db
+<?php
+	$server = "us-cdbr-iron-east-01.cleardb.net";
+	$username = "bb638a0b9e5724";
+	$password = "3556cc19";
+	$db = "heroku_5663ecc9ac15f3e";
+    $conn = new mysqli($server, $username, $password, $db);
+    // Check connection
+    //if ($conn->connect_error) {
+        //die("Connection failed: " . $conn->connect_error);
+    //}
+    mysqli_query($conn, "SET NAMES utf8");
+?>
 function reply_msg($text,$replyToken)//สร้างข้อความและตอบกลับ
 {
     $access_token = 'euQ+PlgFAq/SRzb3qd6yhrQzvxW3mgI89B3EiwYyFuS2yl+3LfgbJo+yhD5QXE7kbmjtYwe47GeniAU52PnvfCIuIO1Rc+wA2ipzZpe6a/lwKNJ6jvZUhCgweX/z8/23VlTeuzci13qu9M3k8Ma92QdB04t89/1O/w1cDnyilFU=';
