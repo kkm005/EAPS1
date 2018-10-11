@@ -5,8 +5,8 @@
 	$db = "heroku_5663ecc9ac15f3e";
     $conn = new mysqli($server, $username, $password, $db);
     mysqli_query($conn, "SET NAMES utf8");
-	
-	$sql = "SELECT * FROM tbl_improve WHERE detail LIKE '%หนอง%'";
+	$office_id = 'หนองกี่';
+	$sql = "SELECT * FROM tbl_improve WHERE detail LIKE '%.office_id.%'";
 	$query = mysqli_query($conn,$sql);
 	$num = mysqli_num_rows($query);
 	echo $num;
