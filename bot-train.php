@@ -2,7 +2,7 @@
 require('./db/connect-db.php');//เรียกใช้ file connect-db
 function reply_msg($text,$replyToken)//สร้างข้อความและตอบกลับ
 {
-    $access_token = 'kTlVAZNnnp/u5ood4DWeY9xLPTDfJoMw2Aoi7CG7EyRQKkcu4aGcWJKppGVM7cd9By1sakiaKtBx6NGvaIs+hFCLzRJqZTmIlNMfkMByAwqNsSeOssGJ8aqX0fGzmzZBVwSVtF+PT+rHtkB9GpjD/AdB04t89/1O/w1cDnyilFU=';
+    $access_token = 'euQ+PlgFAq/SRzb3qd6yhrQzvxW3mgI89B3EiwYyFuS2yl+3LfgbJo+yhD5QXE7kbmjtYwe47GeniAU52PnvfCIuIO1Rc+wA2ipzZpe6a/lwKNJ6jvZUhCgweX/z8/23VlTeuzci13qu9M3k8Ma92QdB04t89/1O/w1cDnyilFU=';
     $messages = ['type' => 'text','text' => $text];//สร้างตัวแปร 
     $url = 'https://api.line.me/v2/bot/message/reply';
     $data = [
