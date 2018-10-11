@@ -6,6 +6,7 @@
 	$db = "heroku_5663ecc9ac15f3e";
     $conn = new mysqli($server, $username, $password, $db);
     mysqli_query($conn, "SET NAMES utf8");
+	
 function reply_msg($text,$replyToken)//สร้างข้อความและตอบกลับ
 {
     $access_token = 'euQ+PlgFAq/SRzb3qd6yhrQzvxW3mgI89B3EiwYyFuS2yl+3LfgbJo+yhD5QXE7kbmjtYwe47GeniAU52PnvfCIuIO1Rc+wA2ipzZpe6a/lwKNJ6jvZUhCgweX/z8/23VlTeuzci13qu9M3k8Ma92QdB04t89/1O/w1cDnyilFU=';
@@ -54,7 +55,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
 					$txtsend = $txtsend ."\n\n".$a.".".$obj["oper"]."\n".$obj["wbs"]."\n".$obj["name"];
 					$a = $a+1;
 				}
-				//reply_msg($txtsend,$replyToken);//เรียกใช้ function
+				reply_msg($txtsend,$replyToken);//เรียกใช้ function
 				reply_msg($office_id,$replyToken);//เรียกใช้ function
 				break;
 			}
