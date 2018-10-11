@@ -37,12 +37,6 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $first_char = substr($txtin,0,1);//ตัดเอาเฉพาะตัวอักษรตัวแรก
 			if($first_char == "@")
 			{
-				mysql_query("SET character_set_results=utf8");
-				mysql_query("SET character_set_client='utf8'");
-				mysql_query("SET character_set_connection='utf8'");
-				mysql_query("collation_connection = utf8_unicode_ci");
-				mysql_query("collation_database = utf8_unicode_ci");
-				mysql_query("collation_server = utf8_unicode_ci");
 				$office_id = trim(iconv_substr($txtin,1,strlen(txtin)));///ได้รหัสการไฟฟ้า 
 				$sql_area = "SELECT * FROM tbl_improve WHERE wbs LIKE '%".$office_id."%'";
 				$query_area = mysqli_query($conn,$sql_area);
