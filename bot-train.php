@@ -55,8 +55,8 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
 					$txtsend = $txtsend ."\n\n".$a.".".$obj["oper"]."\n".$obj["wbs"]."\n".$obj["name"];
 					$a = $a+1;
 				}
-				reply_msg($txtsend,$replyToken);//เรียกใช้ function
-				//reply_msg($office_id,$replyToken);//เรียกใช้ function
+				//reply_msg($txtsend,$replyToken);//เรียกใช้ function
+				reply_msg($txtin,$replyToken);//เรียกใช้ function
 				break;
 			}
          /*ลงทะเบียนกลุ่ม*/   
