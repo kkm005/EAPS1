@@ -38,7 +38,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
 			if($first_char == "@")
 			{
 				$key_id = trim(substr($txtin,1,4));///ได้ข้อความ
-				$sql_keyw = "SELECT * FROM tbl_improve WHERE wbs = '%".$key_id."%'";
+				$sql_keyw = "SELECT * FROM tbl_improve WHERE wbs LIKE '%".$key_id."%'";
 				$query_keyw = mysqli_query($conn,$sql_keyw);
 				$num_row = mysqli_num_r($query_keyw); // นับจำนวนที่หาเจอ
 				$txtsend = "ค้นพบ ".$num_row." รายการ";
