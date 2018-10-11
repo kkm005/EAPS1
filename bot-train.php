@@ -43,7 +43,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
 				mysql_query("collation_connection = utf8_unicode_ci");
 				mysql_query("collation_database = utf8_unicode_ci");
 				mysql_query("collation_server = utf8_unicode_ci");
-				$office_id = trim(substr($txtin,1,strlen(txtin)));///ได้รหัสการไฟฟ้า 
+				$office_id = trim(iconv_substr($txtin,1,strlen(txtin)));///ได้รหัสการไฟฟ้า 
 				$sql_area = "SELECT * FROM tbl_improve WHERE wbs LIKE '%".$office_id."%'";
 				$query_area = mysqli_query($conn,$sql_area);
 				$num_row = mysqli_num_rows($query_area);// นับจำนวนที่หาเจอ
