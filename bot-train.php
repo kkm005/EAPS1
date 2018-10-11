@@ -37,7 +37,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
             $first_char = substr($txtin,0,1);//ตัดเอาเฉพาะตัวอักษรตัวแรก
 			if($first_char == "@")
 			{
-				$office_id = substr($txtin,1,3);///ได้รหัสการไฟฟ้า 
+				$office_id = substr($txtin,1,strlen(txtin));///ได้รหัสการไฟฟ้า 
 				$sql_area = "SELECT * FROM tbl_improve WHERE wbs LIKE '".$office_id."%'";
 				$query_area = mysqli_query($conn,$sql_area);
 				$num_row = mysqli_num_rows($query_area);// นับจำนวนที่หาเจอ
