@@ -49,7 +49,7 @@ if (!is_null($events['events'])) //check ค่าในตัวแปร $even
 					$a = $a+1;
 				}
 				//reply_msg($txtsend,$replyToken);//เรียกใช้ function
-				reply_msg($keyword,$replyToken);
+				reply_msg($kinput,$replyToken);
 				break;
 			}
          /*ลงทะเบียนกลุ่ม*/   
